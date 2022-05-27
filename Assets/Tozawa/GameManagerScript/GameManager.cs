@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     Transform _sp = default;
     [SerializeField] GameObject _checkPoint;
     [SerializeField] public static int zanki = 3;
+    [SerializeField] GameObject _playerPrefab = default;
     public static bool checkpointON = false;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(checkpointON==true)
+        if(checkpointON == true)
         {
             _sp = _checkPoint.transform;//チェックポイント通過したらスポーンポイントをチェックポイントに変更
         }
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         checkpointON = false;
         _sp = _spawnPoint.transform;//初期スポーンポイント設定
+        Instantiate(_playerPrefab, _sp.position, Quaternion.identity);
     }
     void GameOver()//ゲームオーバーの条件（残機数）を満たしたらUIで負けを表示しタイトルをロードする
     {
