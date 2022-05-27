@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/oohashi/GameManagerScript/GameManager.cs
+Assets/oohashi/GameManagerScript/GameManager.cs.meta
+Assets/oohashi/GameManagerScript.meta
