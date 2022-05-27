@@ -8,18 +8,22 @@ public class Playerscript : MonoBehaviour
     [SerializeField] int jumpForce;
     [SerializeField] float emperorTime;
     [SerializeField] float hp = 5;
+    [SerializeField] float counterTime;
     float defaultHp = 0;
     Rigidbody2D rb;
     int jumpcount = 0;
    [SerializeField] bool _canhit = true;//後でserializefieldを消す
     CapsuleCollider2D collider;
     float timer = 0;
+    CounterScript counterscript;
 
     void Start()
     {
         defaultHp = hp;
         rb = GetComponent < Rigidbody2D >();
         collider = GetComponent<CapsuleCollider2D>();
+       // counterscript = FindObjectOfType<CounterScript>();
+       // bc = counterscript.GetComponent<BoxCollider2D>();
     }
 
     void FixedUpdate()
@@ -61,6 +65,10 @@ public class Playerscript : MonoBehaviour
             GameManager.zanki--;
             hp = defaultHp;
         }
+        if(Input.GetButtonDown("Fire2"))
+        {
+            Counter();
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -74,5 +82,11 @@ public class Playerscript : MonoBehaviour
             hp--;//エネミーの攻撃が当たるとhpを減らす
             _canhit = false;
         }
+    }
+    void Counter()
+    {
+        timer += Time.deltaTime;
+
+
     }
 }
