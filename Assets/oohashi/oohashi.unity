@@ -206,27 +206,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &648041026 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5508925256001851281, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
-  m_PrefabInstance: {fileID: 5508925255504846291}
-  m_PrefabAsset: {fileID: 0}
---- !u!70 &648041027
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648041026}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
 --- !u!1 &1649606550
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,29 +322,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5508925256001851280, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
-      propertyPath: m_GravityScale
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5508925256001851281, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
       propertyPath: m_Name
       value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
-      propertyPath: hp
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
-      propertyPath: jumpForce
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
-      propertyPath: emperorTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
-      propertyPath: horizontalSpeed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5508925256001851286, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
       propertyPath: m_RootOrder
@@ -411,6 +370,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5508925256001851284, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}

@@ -11,10 +11,10 @@ public class Playerscript : MonoBehaviour
     float defaultHp = 0;
     Rigidbody2D rb;
     int jumpcount = 0;
-   [SerializeField] bool _canhit = true;
+   [SerializeField] bool _canhit = true;//å„Ç≈serializefieldÇè¡Ç∑
     CapsuleCollider2D collider;
     float timer = 0;
-    // Start is called before the first frame update
+
     void Start()
     {
         defaultHp = hp;
@@ -35,9 +35,8 @@ public class Playerscript : MonoBehaviour
             transform.rotation = new Quaternion(0, 1f, 0, 0);//îΩì]
             rb.velocity = new Vector2(-horizontalSpeed, rb.velocity.y);//ç∂à⁄ìÆ
         }
-
     }
-    // Update is called once per frame
+
     void Update()
     {
         bool jumpky = Input.GetButtonDown("Jump");
@@ -63,6 +62,7 @@ public class Playerscript : MonoBehaviour
             hp = defaultHp;
         }
     }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "ground")
