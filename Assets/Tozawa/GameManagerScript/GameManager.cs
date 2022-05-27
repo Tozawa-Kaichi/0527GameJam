@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] static int zanki = 3;
+    [SerializeField] public static int zanki = 3;
 
     // Start is called before the first frame update
     void Start()
