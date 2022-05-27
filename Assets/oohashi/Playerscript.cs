@@ -6,7 +6,9 @@ public class Playerscript : MonoBehaviour
 {
     [SerializeField] float horizontalSpeed;
     [SerializeField] int jumpForce;
-    [SerializeField] float emperorTime = 0;
+    [SerializeField] float emperorTime;
+    [SerializeField] float hp = 5;
+    float defaultHp = 0;
     Rigidbody2D rb;
     int jumpcount = 0;
    [SerializeField] bool _canhit = true;
@@ -15,6 +17,7 @@ public class Playerscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        defaultHp = hp;
         rb = GetComponent < Rigidbody2D >();
         collider = GetComponent<CapsuleCollider2D>();
     }
@@ -38,21 +41,26 @@ public class Playerscript : MonoBehaviour
     void Update()
     {
         bool jumpky = Input.GetButtonDown("Jump");
-        if (jumpky && jumpcount < 1) 
+        if (jumpky && jumpcount < 1) //ジャンプの回数制限
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);//ジャンプ計算
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jumpcount++;
         }
-        if(_canhit == false)
+        if(_canhit == false)//無敵時間が始まる
         {
             collider.enabled = false;
             timer += Time.deltaTime;
-            if(emperorTime < timer)
+            if(emperorTime < timer)//無敵時間が終わる
             {
                 _canhit = true;
                 collider.enabled = true;
                 timer = 0;
             }
+        }
+        if(hp == 0)//hpが0になったとき残機を減らす
+        {
+            GameManager.zanki--;
+            hp = defaultHp;
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
@@ -63,7 +71,7 @@ public class Playerscript : MonoBehaviour
         }
         if(collision.gameObject.tag == "enemy")
         {
-            GameManager.zanki--;
+            hp--;//エネミーの攻撃が当たるとhpを減らす
             _canhit = false;
         }
     }

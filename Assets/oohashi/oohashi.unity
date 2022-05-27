@@ -352,12 +352,16 @@ PrefabInstance:
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
+      propertyPath: hp
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
       propertyPath: jumpForce
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
       propertyPath: emperorTime
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
       propertyPath: horizontalSpeed
