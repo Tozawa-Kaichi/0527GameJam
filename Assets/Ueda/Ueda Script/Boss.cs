@@ -32,5 +32,11 @@ public class Boss : Enemy
             bossAnim.SetTrigger("Tackle");
             timer = 0;
         }
+        if (hp <= 0)
+        {
+            bossAnim.SetTrigger("Death");
+            GameManager.bossDeath = true;
+        }
     }
+
 }
