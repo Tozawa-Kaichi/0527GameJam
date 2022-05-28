@@ -22,7 +22,7 @@ public class tekinougoki : Enemy
     {
         rd.velocity = new Vector2(speed, rd.velocity.y);   
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if("side" == collision.gameObject.tag)
         {

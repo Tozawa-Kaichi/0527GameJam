@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
         if(hp <= 0)
         {
             anim.SetTrigger("Death");
+            Death();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -34,7 +35,15 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        hp = 0;
+        
+        
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            hp = 0;
+        }
     }
     void Death()
     {
