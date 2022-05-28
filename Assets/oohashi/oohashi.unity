@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &29705515
 Transform:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224106582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.81, y: -2.13, z: 0}
+  m_LocalPosition: {x: -1.48, y: -1.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -377,6 +377,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5508925256001851286, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
   m_PrefabInstance: {fileID: 5508925255504846291}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &1464360252 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 551480141, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
+  m_PrefabInstance: {fileID: 5508925255504846291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1649606550
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +498,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1331317106, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
+      propertyPath: skillHunter
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5508925256001851281, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
       propertyPath: m_Name
       value: player
@@ -501,6 +510,18 @@ PrefabInstance:
       propertyPath: attack
       value: 
       objectReference: {fileID: 29705516}
+    - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
+      propertyPath: _canhit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 1464360252}
+    - target: {fileID: 5508925256001851285, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
+      propertyPath: emperorTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5508925256001851286, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
       propertyPath: m_RootOrder
       value: 1

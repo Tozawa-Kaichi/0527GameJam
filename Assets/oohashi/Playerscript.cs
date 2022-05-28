@@ -12,8 +12,8 @@ public class Playerscript : MonoBehaviour
     float defaultHp = 0;
     Rigidbody2D rb;
     int jumpcount = 0;
-   [SerializeField] bool _canhit = true;//後でserializefieldを消す
-    CapsuleCollider2D collider;
+   [SerializeField]public static bool _canhit = true;//後でserializefieldを消す
+   public CapsuleCollider2D collider;
     float timer = 0;
   // public CounterScript counterscript;
 
@@ -61,7 +61,7 @@ public class Playerscript : MonoBehaviour
     {
         collider.enabled = false;
         timer += Time.deltaTime;
-        if (emperorTime < timer)//無敵時間が終わる
+        if (second < timer)//無敵時間が終わる
         {
             _canhit = true;
             collider.enabled = true;
@@ -80,12 +80,10 @@ public class Playerscript : MonoBehaviour
         {
             hp--;//エネミーの攻撃が当たるとhpを減らす
             _canhit = false;
+            GameManager.playerDeath = true;
         }
     }
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-       
-    }
+   
     private void IsAttack()
     {
         attack.enabled = true;
