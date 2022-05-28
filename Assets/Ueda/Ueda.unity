@@ -367,7 +367,7 @@ MonoBehaviour:
   emperorTime: 2
   attack: {fileID: 0}
   hp: 3
-  _canhit: 1
+  collider: {fileID: 0}
 --- !u!114 &526413265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,6 +669,10 @@ PrefabInstance:
     - target: {fileID: 7339716304557949034, guid: 83ac0420bdfe1b04e8316dea9d7302d1, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339716304557949038, guid: 83ac0420bdfe1b04e8316dea9d7302d1, type: 3}
+      propertyPath: hp
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7339716304557949039, guid: 83ac0420bdfe1b04e8316dea9d7302d1, type: 3}
       propertyPath: m_RootOrder
