@@ -23,14 +23,18 @@ public class AnimationTest : MonoBehaviour
         {
             anim.SetBool("isRun", true);
         }
-        bool jumpky = Input.GetButtonDown("Jump");
-        if (jumpky) //ƒWƒƒƒ“ƒv‚Ì‰ñ”§ŒÀ
+        if (Input.GetButtonDown("Jump"))
         {
             anim.SetBool("isJump",true);
         }
         if (Input.GetButtonDown("Fire1"))
         {
             anim.SetTrigger("isAttack");
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            anim.SetTrigger("isCounter");
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
