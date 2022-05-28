@@ -8,6 +8,7 @@ public class CounterScript : MonoBehaviour
     [SerializeField] float skillHunter;//カウンター時の無敵時間
     [SerializeField] GameObject player;
     [SerializeField] bool _cancounter = true;//後でserializefieldを消す
+    [SerializeField] GameObject cAttack;
     bool counterbool = false;
     Playerscript muteki;
     Collider2D atari;
@@ -45,9 +46,9 @@ public class CounterScript : MonoBehaviour
         {
             Playerscript._canhit = false;
             muteki.Muteki(skillHunter);
+            Instantiate(cAttack,this.transform,this.transform);
             _cancounter = true;
         }
-        
         if (counterTime < timer)
         {
             counterbool = false;

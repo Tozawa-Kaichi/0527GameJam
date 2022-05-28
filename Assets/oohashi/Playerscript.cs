@@ -7,7 +7,7 @@ public class Playerscript : MonoBehaviour
     [SerializeField] float horizontalSpeed;
     [SerializeField] int jumpForce;
     [SerializeField] float emperorTime;//くらった時の無敵時間
-    [SerializeField] private BoxCollider2D attack;
+    [SerializeField] BoxCollider2D attack;
     [SerializeField] float hp = 5;
     float defaultHp = 0;
     Rigidbody2D rb;
@@ -29,12 +29,12 @@ public class Playerscript : MonoBehaviour
         float horizontalky = Input.GetAxisRaw("Horizontal");
         if(horizontalky > 0)
         {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
+            transform.localScale = new Vector2(1, 1);
             rb.velocity = new Vector2(horizontalSpeed, rb.velocity.y);//右移動
         }
         if(horizontalky < 0)
         {
-            transform.rotation = new Quaternion(0, 1f, 0, 0);//反転
+            transform.localScale = new Vector2(-1, 1);//反転
             rb.velocity = new Vector2(-horizontalSpeed, rb.velocity.y);//左移動
         }
     }
@@ -51,10 +51,13 @@ public class Playerscript : MonoBehaviour
         {
             Muteki(emperorTime);
         }
-        if(hp == 0)//hpが0になったとき残機を減らす
+        if(hp < 0)//hpが0になったとき残機を減らす
         {
             GameManager.zanki--;
+
+            GameManager.playerDeath = true;
             hp = defaultHp;
+            Destroy(this.gameObject);
         }
     }
     public  void Muteki(float second)
@@ -80,7 +83,6 @@ public class Playerscript : MonoBehaviour
         {
             hp--;//エネミーの攻撃が当たるとhpを減らす
             _canhit = false;
-            GameManager.playerDeath = true;
         }
     }
    

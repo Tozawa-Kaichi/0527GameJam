@@ -30,9 +30,15 @@ public class Enemy : MonoBehaviour
             var p =collision.gameObject.GetComponent<Rigidbody2D>();
             p.AddForce(knock,ForceMode2D.Impulse);
         }
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        hp = 0;
     }
     void Death()
     {
         Destroy(this.gameObject);
     }
+
 }

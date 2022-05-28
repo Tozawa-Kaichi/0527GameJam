@@ -58,7 +58,10 @@ public class GameManager : MonoBehaviour
         {
             GameStart();
         }
-        
+        if(GoalChecker.goalcheck == true)
+        {
+            Stage1Clear();
+        }
     }
 
     void GameStart()//ゲーム開始とともにプレイヤーｯを生成しゲーム開始
@@ -75,10 +78,15 @@ public class GameManager : MonoBehaviour
     }
     void Clear()//ゴールに触れる・ボスを倒したらWinUIを表示して次のシーンに行く
     {
-        SceneManager.LoadScene(_buildIndexnum);
+        clearUI.SetActive(true);
+        
+
+    }
+    void Stage1Clear()
+    {
+        GoalChecker.goalcheck = false;
         clearUI.SetActive(true);
         NextStageLoad("Stage2");
-
     }
 
     public void NextStageLoad(string name)
@@ -92,4 +100,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(_loadwaitsecond);//アニメーションが終わった後指定した秒数待ってくれる（これいる？）
         SceneManager.LoadScene(name);
     }
+
+
+   
 }
