@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     void Clear()//ゴールに触れる・ボスを倒したらWinUIを表示して次のシーンに行く
     {
         clearUI.SetActive(true);
-        
+        NextStageLoad("Tittle");
 
     }
     void Stage1Clear()
