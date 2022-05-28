@@ -12,15 +12,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _playerPrefab = default;//プレイヤーのプレハブ
     [SerializeField] float _loadwaitsecond = 3f;
     public static bool checkpointON = false;
-    static bool bossDeath = false;
+    public static bool bossDeath = false;
+    public static bool playerDeath = false;
     bool _clear = false;
     int _defaultZanki;
     int _buildIndexnum = 0;
-    Scene _thisScene;//現在のシーン
 
     // Start is called before the first frame update
     void Start()
     {
+
+        bossDeath = false;
+        _sp = _spawnPoint.transform;//初期スポーンポイント設定
+        checkpointON = false;
         _defaultZanki = zanki;
         _clear = false;
         GameStart();
@@ -41,16 +45,17 @@ public class GameManager : MonoBehaviour
         {
             Clear();
         }
+        if(playerDeath == true)
+        {
+
+        }
         
     }
 
     void GameStart()//ゲーム開始とともにプレイヤーｯを生成しゲーム開始
     {
-        bossDeath = false;
-        _thisScene = SceneManager.GetActiveScene();//現在のシーンを取得
-        checkpointON = false;
-        _sp = _spawnPoint.transform;//初期スポーンポイント設定
         Instantiate(_playerPrefab, _sp.position, Quaternion.identity);//プレイヤー生成
+        playerDeath = false;
     }
     void GameOver()//ゲームオーバーの条件（残機数）を満たしたらUIで負けを表示しタイトルをロードする
     {
