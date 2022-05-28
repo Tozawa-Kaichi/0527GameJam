@@ -449,6 +449,10 @@ PrefabInstance:
       propertyPath: hp
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7339716304557949038, guid: 83ac0420bdfe1b04e8316dea9d7302d1, type: 3}
+      propertyPath: knockbackP
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7339716304557949039, guid: 83ac0420bdfe1b04e8316dea9d7302d1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1517,6 +1521,10 @@ PrefabInstance:
       propertyPath: _playerPrefab
       value: 
       objectReference: {fileID: 5508925256001851281, guid: 0ae5060a21fb29d448d9878ef82caa36, type: 3}
+    - target: {fileID: 7750052156954568315, guid: 7fdfeda8b904a4843a77894fddbbede2, type: 3}
+      propertyPath: _loadwaitsecond
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7750052158152079900, guid: 7fdfeda8b904a4843a77894fddbbede2, type: 3}
       propertyPath: m_Size.y
       value: 64.58923
