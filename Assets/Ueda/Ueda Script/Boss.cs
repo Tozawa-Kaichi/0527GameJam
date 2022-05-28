@@ -6,6 +6,10 @@ public class Boss : Enemy
 {   float moveCount = 0;
     [SerializeField]float tackleTime = 20;
     float timer = 0;
+    [SerializeField] public GameObject bullet;
+    [SerializeField] public Transform barrel;
+    [SerializeField] public float cooltime = 2f;
+    public float count = 0;
     // Start is called before the first frame update
     void Start()
     {

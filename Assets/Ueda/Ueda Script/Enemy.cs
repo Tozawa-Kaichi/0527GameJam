@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-    [SerializeField] public GameObject bullet;
-    [SerializeField] public Transform barrel;
-    [SerializeField] public float cooltime = 2f;
-    public float count = 0;
     [SerializeField] public float knockbackP = 1f;
     [SerializeField] public int hp = 5;
     Animator anim;
@@ -24,12 +19,6 @@ public class Enemy : MonoBehaviour
         if(hp <= 0)
         {
             anim.SetTrigger("Death");
-        }
-        count += Time.deltaTime;
-        if (count > cooltime)
-        {
-            Instantiate(bullet, barrel.position, barrel.rotation);
-            count = 0;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
