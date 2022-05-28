@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CounterAttack : MonoBehaviour
 {
-    [SerializeField] CounterScript counterscript;
+   // [SerializeField] CounterScript counterscript;
     public BoxCollider2D box;
     // Start is called before the first frame update
     void Start()
