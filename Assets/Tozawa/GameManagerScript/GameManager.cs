@@ -12,13 +12,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _playerPrefab = default;//プレイヤーのプレハブ
     [SerializeField] float _loadwaitsecond = 3f;
     public static bool checkpointON = false;
+    static bool bossDeath = false;
+    bool _clear = false;
     int _defaultZanki;
-    string _nextscenename;//シーン名の補完先
+    int _buildIndexnum = 0;
     Scene _thisScene;//現在のシーン
+
     // Start is called before the first frame update
     void Start()
     {
         _defaultZanki = zanki;
+        _clear = false;
         GameStart();
     }
 
@@ -33,12 +37,17 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+        if(bossDeath == true)
+        {
+            Clear();
+        }
+        
     }
 
     void GameStart()//ゲーム開始とともにプレイヤーｯを生成しゲーム開始
     {
+        bossDeath = false;
         _thisScene = SceneManager.GetActiveScene();//現在のシーンを取得
-
         checkpointON = false;
         _sp = _spawnPoint.transform;//初期スポーンポイント設定
         Instantiate(_playerPrefab, _sp.position, Quaternion.identity);//プレイヤー生成
@@ -50,6 +59,8 @@ public class GameManager : MonoBehaviour
     }
     void Clear()//ゴールに触れる・ボスを倒したらWinUIを表示して次のシーンに行く
     {
+        SceneManager.LoadScene(_buildIndexnum);//
+        NextStageLoad("Stage2");
 
     }
 
