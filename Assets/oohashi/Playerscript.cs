@@ -6,7 +6,8 @@ public class Playerscript : MonoBehaviour
 {
     [SerializeField] float horizontalSpeed;
     [SerializeField] int jumpForce;
-    [SerializeField] float emperorTime;
+    [SerializeField] float emperorTime;//くらった時の無敵時間
+    [SerializeField] private BoxCollider2D attack;
     [SerializeField] float hp = 5;
     float defaultHp = 0;
     Rigidbody2D rb;
@@ -14,7 +15,7 @@ public class Playerscript : MonoBehaviour
    [SerializeField] bool _canhit = true;//後でserializefieldを消す
     CapsuleCollider2D collider;
     float timer = 0;
-   // CounterScript counterscript;
+  // public CounterScript counterscript;
 
     void Start()
     {
@@ -48,14 +49,7 @@ public class Playerscript : MonoBehaviour
         }
         if(_canhit == false)//無敵時間が始まる
         {
-            collider.enabled = false;
-            timer += Time.deltaTime;
-            if(emperorTime < timer)//無敵時間が終わる
-            {
-                _canhit = true;
-                collider.enabled = true;
-                timer = 0;
-            }
+            Muteki(emperorTime);
         }
         if(hp == 0)//hpが0になったとき残機を減らす
         {
@@ -63,6 +57,18 @@ public class Playerscript : MonoBehaviour
             hp = defaultHp;
         }
     }
+    public  void Muteki(float second)
+    {
+        collider.enabled = false;
+        timer += Time.deltaTime;
+        if (emperorTime < timer)//無敵時間が終わる
+        {
+            _canhit = true;
+            collider.enabled = true;
+            timer = 0;
+        }
+    }
+
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -75,5 +81,17 @@ public class Playerscript : MonoBehaviour
             hp--;//エネミーの攻撃が当たるとhpを減らす
             _canhit = false;
         }
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+    }
+    private void IsAttack()
+    {
+        attack.enabled = true;
+    }
+    private void IsAttack2()
+    {
+        attack.enabled = false;
     }
 }
