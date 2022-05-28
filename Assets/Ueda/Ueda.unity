@@ -365,6 +365,7 @@ MonoBehaviour:
   jumpForce: 17
   emperorTime: 2
   hp: 3
+  counterTime: 0
   _canhit: 1
 --- !u!114 &526413265
 MonoBehaviour:
