@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField]float speed = 5f;
     Vector2 shot;
     [SerializeField] float knockbackP = 1f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class Bullet : MonoBehaviour
         shot = speed * x;
         rb = GetComponent< Rigidbody2D>();
         rb.AddForce(shot, ForceMode2D.Impulse);
+        
     }
 
     // Update is called once per frame
