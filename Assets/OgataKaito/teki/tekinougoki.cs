@@ -5,7 +5,7 @@ using UnityEngine;
 public class tekinougoki : Enemy
 {
     public float speed = 2.0f;
-    private Rigidbody2D rd;
+    Rigidbody2D rd;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,7 @@ public class tekinougoki : Enemy
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if("side" == collision.gameObject.tag)
+        if(collision.gameObject.tag == "side" )
         {
             speed = speed * -1;
         }
