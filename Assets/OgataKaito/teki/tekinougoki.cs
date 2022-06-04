@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class tekinougoki : Enemy
 {
-    public float speed = 2.0f;
-    Rigidbody2D rd;
+    [SerializeField] float speed = 2.0f;
+    Rigidbody2D _rd2D;
     // Start is called before the first frame update
     void Start()
     {
-        rd = GetComponent<Rigidbody2D>();
-    
+        _rd2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -20,7 +19,7 @@ public class tekinougoki : Enemy
     }
     private void move()
     {
-        rd.velocity = new Vector2(speed, rd.velocity.y);   
+        _rd2D.velocity = new Vector2(speed, _rd2D.velocity.y);   
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
